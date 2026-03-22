@@ -46,7 +46,7 @@ Auto-commit + permission config installer for Claude Code &amp; OpenCode. Intera
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/YOUR_USERNAME/ai-commit-setup.git
+git clone https://github.com/lokyshin/ai-commit-setup.git
 cd ai-commit-setup
 
 # 2. Grant execute permission
@@ -62,7 +62,7 @@ cd /path/to/your/project
 Or run directly without cloning:
 
 ```bash
-bash <(curl -fsSL https://raw.githubusercontent.com/YOUR_USERNAME/ai-commit-setup/main/setup-auto-commit.sh)
+bash <(curl -fsSL https://raw.githubusercontent.com/lokyshin/ai-commit-setup/main/setup-auto-commit.sh)
 ```
 
 ---
@@ -221,7 +221,7 @@ See [LICENSE](./LICENSE) for details.
 
 ```bash
 # 1. 克隆仓库
-git clone https://github.com/YOUR_USERNAME/ai-commit-setup.git
+git clone https://github.com/lokyshin/ai-commit-setup.git
 cd ai-commit-setup
 
 # 2. 授予执行权限
@@ -237,7 +237,7 @@ cd /path/to/your/project
 或直接在线执行（无需克隆）：
 
 ```bash
-bash <(curl -fsSL https://raw.githubusercontent.com/YOUR_USERNAME/ai-commit-setup/main/setup-auto-commit.sh)
+bash <(curl -fsSL https://raw.githubusercontent.com/lokyshin/ai-commit-setup/main/setup-auto-commit.sh)
 ```
 
 ---
