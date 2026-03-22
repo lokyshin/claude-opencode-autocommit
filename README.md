@@ -46,7 +46,7 @@ Auto-commit + permission config installer for Claude Code &amp; OpenCode. Intera
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/lokyshin/ claude-opencode-autocommit.git
+git clone https://github.com/lokyshin/claude-opencode-autocommit.git
 cd  claude-opencode-autocommit
 
 # 2. Grant execute permission
@@ -237,7 +237,7 @@ cd /path/to/your/project
 或直接在线执行（无需克隆）：
 
 ```bash
-bash <(curl -fsSL https://raw.githubusercontent.com/lokyshin/ claude-opencode-autocommit/main/setup-auto-commit.sh)
+bash <(curl -fsSL https://raw.githubusercontent.com/lokyshin/claude-opencode-autocommit/main/setup-auto-commit.sh)
 ```
 
 ---
