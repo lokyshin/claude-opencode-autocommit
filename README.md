@@ -358,7 +358,7 @@ git log --oneline -5
 
 ### 📄 开源许可
 
-MIT License © 2026 YOUR_NAME
+MIT License © 2026 Lokyshin Zhao
 
 详见 [LICENSE](./LICENSE) 文件。
 
