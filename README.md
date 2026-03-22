@@ -56,13 +56,13 @@ chmod +x setup-auto-commit.sh
 cd /path/to/your/project
 
 # 4. Run the installer
-/path/to/ claude-opencode-autocommit/setup-auto-commit.sh
+/path/to/claude-opencode-autocommit/setup-auto-commit.sh
 ```
 
 Or run directly without cloning:
 
 ```bash
-bash <(curl -fsSL https://raw.githubusercontent.com/lokyshin/ claude-opencode-autocommit/main/setup-auto-commit.sh)
+bash <(curl -fsSL https://raw.githubusercontent.com/lokyshin/claude-opencode-autocommit/main/setup-auto-commit.sh)
 ```
 
 ---
@@ -231,7 +231,7 @@ chmod +x setup-auto-commit.sh
 cd /path/to/your/project
 
 # 4. 运行安装脚本
-/path/to/ claude-opencode-autocommit/setup-auto-commit.sh
+/path/to/claude-opencode-autocommit/setup-auto-commit.sh
 ```
 
 或直接在线执行（无需克隆）：
