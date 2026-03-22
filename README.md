@@ -1,6 +1,6 @@
 # claude-opencode-autocommit
 Auto-commit + permission config installer for Claude Code &amp; OpenCode. Interactive shell script supporting user/project level setup with bilingual (EN/ZH) prompts. | Claude Code &amp; OpenCode 自动提交 + 权限配置安装脚本，支持中英双语交互，覆盖用户级与项目级配置。
-# 🤖 ai-commit-setup
+# 🤖  claude-opencode-autocommit
 
 **Auto-commit + Git permission config installer for Claude Code & OpenCode**  
 **Claude Code & OpenCode 自动提交 + Git 权限配置 一键安装脚本**
@@ -46,8 +46,8 @@ Auto-commit + permission config installer for Claude Code &amp; OpenCode. Intera
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/lokyshin/ai-commit-setup.git
-cd ai-commit-setup
+git clone https://github.com/lokyshin/ claude-opencode-autocommit.git
+cd  claude-opencode-autocommit
 
 # 2. Grant execute permission
 chmod +x setup-auto-commit.sh
@@ -56,13 +56,13 @@ chmod +x setup-auto-commit.sh
 cd /path/to/your/project
 
 # 4. Run the installer
-/path/to/ai-commit-setup/setup-auto-commit.sh
+/path/to/ claude-opencode-autocommit/setup-auto-commit.sh
 ```
 
 Or run directly without cloning:
 
 ```bash
-bash <(curl -fsSL https://raw.githubusercontent.com/lokyshin/ai-commit-setup/main/setup-auto-commit.sh)
+bash <(curl -fsSL https://raw.githubusercontent.com/lokyshin/ claude-opencode-autocommit/main/setup-auto-commit.sh)
 ```
 
 ---
@@ -221,8 +221,8 @@ See [LICENSE](./LICENSE) for details.
 
 ```bash
 # 1. 克隆仓库
-git clone https://github.com/lokyshin/ai-commit-setup.git
-cd ai-commit-setup
+git clone https://github.com/lokyshin/ claude-opencode-autocommit.git
+cd  claude-opencode-autocommit
 
 # 2. 授予执行权限
 chmod +x setup-auto-commit.sh
@@ -231,13 +231,13 @@ chmod +x setup-auto-commit.sh
 cd /path/to/your/project
 
 # 4. 运行安装脚本
-/path/to/ai-commit-setup/setup-auto-commit.sh
+/path/to/ claude-opencode-autocommit/setup-auto-commit.sh
 ```
 
 或直接在线执行（无需克隆）：
 
 ```bash
-bash <(curl -fsSL https://raw.githubusercontent.com/lokyshin/ai-commit-setup/main/setup-auto-commit.sh)
+bash <(curl -fsSL https://raw.githubusercontent.com/lokyshin/ claude-opencode-autocommit/main/setup-auto-commit.sh)
 ```
 
 ---
