@@ -1,6 +1,4 @@
-# claude-opencode-autocommit
-Auto-commit + permission config installer for Claude Code &amp; OpenCode. Interactive shell script supporting user/project level setup with bilingual (EN/ZH) prompts. | Claude Code &amp; OpenCode 自动提交 + 权限配置安装脚本，支持中英双语交互，覆盖用户级与项目级配置。
-# 🤖  claude-opencode-autocommit
+# 🤖 claude-opencode-autocommit
 
 **Auto-commit + Git permission config installer for Claude Code & OpenCode**  
 **Claude Code & OpenCode 自动提交 + Git 权限配置 一键安装脚本**
@@ -22,10 +20,12 @@ Auto-commit + permission config installer for Claude Code &amp; OpenCode. Intera
 - 🛠️ **Multi-tool support** — Claude Code, OpenCode, or both simultaneously
 - 📁 **Multi-level installation** — Global (user-level) or project-level (shared/private)
 - 🔐 **Three permission modes** — Relaxed / Strict / Full open
-- 🔄 **Auto-commit on task complete** — AI tools automatically run `git add` + `git commit` after each change
+- 🔄 **Auto-commit on task complete** — AI tools automatically run `git add` + `git commit` after each change (driven by AGENTS.md instructions)
 - 🚫 **Push protection** — `git push` always requires manual confirmation
 - 📝 **Conventional commits** — Auto-generated messages follow `feat/fix/refactor/docs/chore` convention
 - 🔒 **gitignore-aware** — Private config files auto-added to `.gitignore`
+
+> **Compatibility Note:** This script is compatible with **OpenCode ≥ 1.x**. The deprecated `autosave` config key has been removed. Auto-commit behavior is now driven entirely by `AGENTS.md` instructions to the AI agent.
 
 ---
 
@@ -36,7 +36,7 @@ Auto-commit + permission config installer for Claude Code &amp; OpenCode. Intera
 | Git | ≥ 2.x |
 | Bash | ≥ 4.x |
 | Claude Code | Latest ([install](https://code.claude.com/docs)) |
-| OpenCode | Latest ([install](https://opencode.ai/docs)) |
+| OpenCode | **≥ 1.x** ([install](https://opencode.ai/docs)) |
 
 > Claude Code and OpenCode are optional — install only what you use.
 
@@ -47,7 +47,7 @@ Auto-commit + permission config installer for Claude Code &amp; OpenCode. Intera
 ```bash
 # 1. Clone the repository
 git clone https://github.com/lokyshin/claude-opencode-autocommit.git
-cd  claude-opencode-autocommit
+cd claude-opencode-autocommit
 
 # 2. Grant execute permission
 chmod +x setup-auto-commit.sh
@@ -107,8 +107,8 @@ Step 3 │ Permission Strategy
 
 | File | Location | Purpose |
 |------|----------|---------|
-| `AGENTS.md` | Project root or `~/` | Auto-commit instructions for OpenCode |
-| `opencode.json` | Project root or `~/.config/opencode/` | Permission + autosave rules |
+| `AGENTS.md` | Project root or `~/` | Auto-commit instructions for OpenCode AI agent |
+| `opencode.json` | Project root or `~/.config/opencode/` | Permission rules (OpenCode ≥ 1.x compatible) |
 | `opencode.local.json` | Project root | Private config (gitignored) |
 
 ---
@@ -153,6 +153,21 @@ This difference is handled automatically by the installer.
 
 ---
 
+### 💡 How Auto-Commit Works in OpenCode (≥ 1.x)
+
+OpenCode ≥ 1.x removed the `autosave` config key. Auto-commit is now achieved via `AGENTS.md` instructions that the AI agent reads and follows:
+
+```markdown
+After every logical change, automatically run:
+1. git add -A
+2. git commit -m "<type>: <short description>"
+Do NOT auto-push.
+```
+
+The AI agent executes these git commands after completing each task. No config-level hook is required.
+
+---
+
 ### 💡 Best Practices
 
 1. **Never auto-push** — Only auto-commit; always push manually after review
@@ -167,25 +182,21 @@ This difference is handled automatically by the installer.
 
 **Claude Code:**
 ```bash
-# Open Claude Code in your project, then type:
 /permissions
 # Should show: git add/commit in allow list
 ```
 
 **OpenCode:**
 ```bash
-# Complete any task in OpenCode, then check:
 git log --oneline -5
-# Should show auto-generated commits
+# Should show auto-generated commits after completing a task
 ```
 
 ---
 
 ### 📄 License
 
-MIT License © 2026 YOUR_NAME
-
-See [LICENSE](./LICENSE) for details.
+MIT License © 2026 Lokyshin Zhao — See [LICENSE](./LICENSE) for details.
 
 ---
 
@@ -197,10 +208,12 @@ See [LICENSE](./LICENSE) for details.
 - 🛠️ **多工具支持** — 支持 Claude Code、OpenCode 或同时配置两者
 - 📁 **多级安装** — 用户级（全局）或项目级（团队共享/个人私有）
 - 🔐 **三种权限模式** — 宽松 / 严格 / 完全开放
-- 🔄 **任务完成自动提交** — AI 工具每次改动后自动执行 `git add` + `git commit`
+- 🔄 **任务完成自动提交** — AI 工具每次改动后自动执行 `git add` + `git commit`（由 AGENTS.md 指令驱动）
 - 🚫 **Push 保护** — `git push` 始终需要手动确认，避免意外推送
 - 📝 **规范提交信息** — 自动生成符合 `feat/fix/refactor/docs/chore` 约定的 commit message
 - 🔒 **自动 gitignore** — 私有配置文件自动加入 `.gitignore`
+
+> **兼容性说明：** 已适配 **OpenCode ≥ 1.x**。旧版废弃的 `autosave` 配置键已彻底移除，自动提交行为改由 `AGENTS.md` 中的 AI 指令驱动，功能等效。
 
 ---
 
@@ -211,7 +224,7 @@ See [LICENSE](./LICENSE) for details.
 | Git | ≥ 2.x |
 | Bash | ≥ 4.x |
 | Claude Code | 最新版（[安装文档](https://code.claude.com/docs)） |
-| OpenCode | 最新版（[安装文档](https://opencode.ai/docs)） |
+| OpenCode | **≥ 1.x**（[安装文档](https://opencode.ai/docs)） |
 
 > Claude Code 和 OpenCode 按需安装，脚本会根据选择只配置你使用的工具。
 
@@ -222,7 +235,7 @@ See [LICENSE](./LICENSE) for details.
 ```bash
 # 1. 克隆仓库
 git clone https://github.com/lokyshin/claude-opencode-autocommit.git
-cd  claude-opencode-autocommit
+cd claude-opencode-autocommit
 
 # 2. 授予执行权限
 chmod +x setup-auto-commit.sh
@@ -282,8 +295,8 @@ bash <(curl -fsSL https://raw.githubusercontent.com/lokyshin/claude-opencode-aut
 
 | 文件 | 位置 | 用途 |
 |------|------|------|
-| `AGENTS.md` | 项目根目录或 `~/` | 告知 OpenCode 自动提交规则 |
-| `opencode.json` | 项目根目录或 `~/.config/opencode/` | 权限 + 自动保存规则 |
+| `AGENTS.md` | 项目根目录或 `~/` | 告知 OpenCode AI 自动提交规则 |
+| `opencode.json` | 项目根目录或 `~/.config/opencode/` | 权限规则（兼容 OpenCode ≥ 1.x） |
 | `opencode.local.json` | 项目根目录 | 私有配置（已 gitignore） |
 
 ---
@@ -328,6 +341,21 @@ bash <(curl -fsSL https://raw.githubusercontent.com/lokyshin/claude-opencode-aut
 
 ---
 
+### 💡 OpenCode 自动提交原理（≥ 1.x）
+
+OpenCode 1.x 移除了 `autosave` 配置键，自动提交现通过 `AGENTS.md` 中的 AI 指令实现：
+
+```markdown
+每次完成逻辑改动后，自动执行：
+1. git add -A
+2. git commit -m "<type>: <描述>"
+不要自动 push，等待人工 review。
+```
+
+AI Agent 读取此指令后，会在每次完成任务时自动执行 git 操作，无需配置文件级别的 hook，功能与旧版 `autosave` 等效。
+
+---
+
 ### 💡 最佳实践
 
 1. **不要自动 push** — 只自动 commit，push 在 review 后手动执行
@@ -342,25 +370,21 @@ bash <(curl -fsSL https://raw.githubusercontent.com/lokyshin/claude-opencode-aut
 
 **Claude Code：**
 ```bash
-# 在项目目录打开 Claude Code，输入：
 /permissions
 # 应显示：git add/commit 在 allow 列表中
 ```
 
 **OpenCode：**
 ```bash
-# 在 OpenCode 中完成任意任务，然后检查：
 git log --oneline -5
-# 应显示自动生成的 commit 记录
+# 完成任意任务后，应显示自动生成的 commit 记录
 ```
 
 ---
 
 ### 📄 开源许可
 
-MIT License © 2026 Lokyshin Zhao
-
-详见 [LICENSE](./LICENSE) 文件。
+MIT License © 2026 Lokyshin Zhao — 详见 [LICENSE](./LICENSE) 文件。
 
 ---
 
